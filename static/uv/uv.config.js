@@ -1,6 +1,6 @@
 self.__uv$config = {
     prefix: '/static/jmwsw/',
-    bare: 'https://abyss-web-intel.vercel.app/bare/',
+    bare: 'https://parallel-daphene-ijuslostmydooohg-021a963b.koyeb.app/fq/',
     encodeUrl: Ultraviolet.codec.xor.encode,
     decodeUrl: Ultraviolet.codec.xor.decode,
     handler: '/static/uv/uv.handler.js',
