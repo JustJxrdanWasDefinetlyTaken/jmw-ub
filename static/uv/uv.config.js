@@ -1,6 +1,6 @@
 self.__uv$config = {
     prefix: '/static/jmwsw/',
-    bare: 'https://parallel-daphene-ijuslostmydooohg-021a963b.koyeb.app/fq/',
+    bare: 'https://v2202411241114295257.megasrv.de/bare/',
     encodeUrl: Ultraviolet.codec.xor.encode,
     decodeUrl: Ultraviolet.codec.xor.decode,
     handler: '/static/uv/uv.handler.js',
