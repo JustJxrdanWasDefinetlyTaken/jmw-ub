@@ -1,16 +1,109 @@
 <!DOCTYPE html>
 <html>
+  <script src="/static/assets/script/ab.js" defer></script>
 <head>
-  <script async src="https://arc.io/widget.min.js#L1SfLEWE"></script>
-  <title>Redirect Page</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@500');
+
+    *,
+    html {
+      margin: 0;
+      padding: 0
+    }
+
+    body {
+      background: #262626;
+      color: #DBCf7A;
+      text-align: center;
+      font-family: 'Be Vietnam Pro', sans-serif;
+      overflow:hidden;
+    }
+
+    svg {
+      width: 200px;
+      margin-left:70px;
+      display: inline-block;
+      color: #DBCf7A;
+    }
+
+    h1 {
+      text-align: center;
+      color: #DBCf7A;
+      font-size: 34px;
+      font-weight: 100;
+      text-transform: uppercase;
+      background-color: darken(black, 5);
+      padding: 20px 0;
+    }
+
+    img {
+      width: 400px;
+    }
+
+    b {
+      font-weight: 700;
+    }
+
+    .made-with-love {
+      margin-top: 20px;
+      padding: 10px;
+      font-size: 10px;
+      font-family: arial;
+      color: #fff;
+
+      i {
+        font-style: normal;
+        color: #DBCf7A;
+        font-size: 14px;
+        position: relative;
+        top: 2px;
+      }
+
+      a {
+        color: #fff;
+        text-decoration: none;
+
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+    .center {
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+          font-family: 'Be Vietnam Pro', sans-serif;
+  }
+  </style>
+  <link rel="icon" type="image/png" href="/as.png">
+  <title>Angel Searcher | Loading..</title>
   <script>
-    window.onload = function() {
-      window.location.href = "/static/"; // Replace with your desired URL
-    };
+    setTimeout(function () {
+      window.location.href = "/static/";
+    }, 4000);
   </script>
 </head>
+
 <body>
-  <h1>Redirecting...</h1>
-  <p>If you are not redirected, <a href="/static/">click here</a>.</p>
+  <div class="center">
+    <h1><img src="as.png" /></h1>
+    <svg version="1.1" id="L4" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
+      y="0px" viewBox="0 0 100 100" enable-background="new 0 0 0 0" xml:space="preserve">
+      <circle fill="#DBCf7A" stroke="none" cx="6" cy="50" r="6">
+        <animate attributeName="opacity" dur="1s" values="0;1;0" repeatCount="indefinite" begin="0.1" />
+      </circle>
+      <circle fill="#DBCf7A" stroke="none" cx="26" cy="50" r="6">
+        <animate attributeName="opacity" dur="1s" values="0;1;0" repeatCount="indefinite" begin="0.2" />
+      </circle>
+      <circle fill="#DBCf7A" stroke="none" cx="46" cy="50" r="6">
+        <animate attributeName="opacity" dur="1s" values="0;1;0" repeatCount="indefinite" begin="0.3" />
+      </circle>
+    </svg>
+    <h4>If you are not redirected, <a style="text-decoration: none;color:white;" href="/static/">click here</a>.</h4>
+  </div>
 </body>
+
 </html>
