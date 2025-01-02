@@ -19,35 +19,42 @@
     margin-left: auto;
     margin-right: auto;
     display: block;
+    cursor:pointer;
     ">
     <p style="float:left;margin:5px;font-size:33px;margin-top:15px;">Angel Searcher</p>
     <a href="/static/sgnittes/"><i class="fa-solid fa-gear"></i></a>
-    <a href="/static/yxrop/"><i class="fa-solid fa-grid-2"></i></a>
+    <a href="/static/stuctrohs/"><i class="fa-solid fa-grid-2"></i></a>
     <a href="/static/ylap/"><i class="fa-solid fa-joystick"></i></a>
   </div>
   <div id="content">
+    <button style="font-size:40px;color:white;background:transparent;border:none;position:absolute;left:15px;" onclick="toggleFullscreen()"><i class="fa-solid fa-expand"></i></button>
+    <button style="font-size:40px;color:white;background:transparent;border:none;position:absolute;left:60px;" onclick="backwindow()"><i class="fa-solid fa-chevron-left"></i></i></button>
+    <button style="font-size:40px;color:white;background:transparent;border:none;position:absolute;left:100px;" onclick="forwardwindow()"><i class="fa-solid fa-chevron-right"></i></button>
     <br>
     <br>
     <br>
-    <form id="uv-form">
-      <input id="uv-search-engine" value="https://www.google.com/search?q=%s" type="hidden" />
-      <input id="uv-address" type="text" placeholder="Search Google or type an URL" class="form__input" />
-    </form>
-    <div class="desc left-margin">
-      <p id="uv-error"></p>
-      <pre id="uv-error-code"></pre>
-    </div>
-    <div style="position: absolute;right: 15px;bottom: 15px;font-size:35px;">
-      <a href="https://discord.gg/XBp3rS3mUf"><i class="fa-brands fa-discord"></i></a>
-    </div>
+    <div style="height:500px;">
+    <iframe class="iframe" style="width:100%;height:100%;border:none;border-radius:10px;" src="/static/yxrop/"></iframe>
   </div>
-  <script src="/static/uv/uv.bundle.js" defer></script>
-  <script src="/static/uv/uv.config.js" defer></script>
-  <script src="/static/register-sw.js" defer></script>
-  <script src="/static/search.js" defer></script>
-  <script src="/static/index.js" defer></script>
-  <script src="/static/error.js" defer></script>
-  <script src="/static/assets/script/ab.js" defer></script>
+</div>
 </body>
+<script>
+            function toggleFullscreen() {
+            let elem = document.querySelector('.iframe');
 
+            if (!document.fullscreenElement) {
+              elem.requestFullscreen().catch((err) => {
+                alert(`Error attempting to enable fullscreen mode: ${err.message} (${err.name})`);
+              });
+            } else {
+              document.exitFullscreen();
+            }
+          }
+          function backwindow() {
+            window.history.back();
+          }
+          function forwardwindow() {
+            window.history.forward();
+          }
+</script>
 </html>

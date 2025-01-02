@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Angel Searcher | Results for "Newtons 3rd Law"</title>
+    <link rel="stylesheet" type="text/css" href="/static/assets/style/homepage.css" />
+    <link rel="stylesheet" type="text/css" href="/static/assets/style/apzpage.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.4.2/css/all.css">
+</head>
+<body>
+    <div class="navbar">
+        <img onclick="window.location.href='/'" src="/as.png" class="logo" style="
+            float: left;
+        width: 50px;
+        margin-top:10px;
+        margin-left: auto;
+        margin-right: auto;
+        display: block;
+        cursor:pointer;
+        ">
+        <p style="float:left;margin:5px;font-size:33px;margin-top:15px;">Angel Searcher</p>
+        <a href="/static/sgnittes/"><i class="fa-solid fa-gear"></i></a>
+        <a href="/static/stuctrohs/"><i class="fa-solid fa-grid-2"></i></a>
+        <a href="/static/ylap/"><i class="fa-solid fa-joystick"></i></a>
+      </div>
+<div align="center">
+    <div class="search-container">
+        <input type="text" id="searchBar" placeholder="Search for a game...">
+    </div>
+    
+    <div class="game-container" id="gameContainer">
+        <div class="game" data-url="/static/embed.html#https://google.com" data-name="google">
+            <img src="/static/assets/image/google.png" alt="google">
+            <p>Google</p>
+        </div>
+        <div class="game" data-url="/static/embed.html#https://tiktok.com" data-name="TikTok">
+            <img src="/static/assets/image/tiktok.png" alt="tiktok">
+            <p>TikTok</p>
+        </div>
+    </div>
+    
+    <div class="modal" id="gameModal">
+        <div class="modal-content">
+            <button class="modal-close" id="closeModal">&times;</button>
+            <button class="modal-fullscreen" id="fullscreenModal">&#x26F6;</button>
+            <iframe class="frame" id="gameIframe" src=""></iframe>
+        </div>
+    </div>
+</div>
+</body>
+<script>
+       const games = document.querySelectorAll('.game');
+    const modal = document.getElementById('gameModal');
+    const iframe = document.getElementById('gameIframe');
+    const closeModal = document.getElementById('closeModal');
+    const fullscreenModal = document.getElementById('fullscreenModal');
+    const searchBar = document.getElementById('searchBar');
+    const gameContainer = document.getElementById('gameContainer');
+
+    games.forEach(game => {
+        game.addEventListener('click', () => {
+            const gameUrl = game.getAttribute('data-url');
+            iframe.src = gameUrl;
+            modal.style.display = 'flex';
+        });
+    });
+
+    closeModal.addEventListener('click', () => {
+        modal.style.display = 'none';
+        iframe.src = '';
+    });
+
+    fullscreenModal.addEventListener('click', () => {
+        if (iframe.requestFullscreen) {
+            iframe.requestFullscreen();
+        } else if (iframe.webkitRequestFullscreen) {
+            iframe.webkitRequestFullscreen();
+        } else if (iframe.msRequestFullscreen) {
+            iframe.msRequestFullscreen();
+        }
+    });
+
+    window.addEventListener('click', (e) => {
+        if (e.target === modal) {
+            modal.style.display = 'none';
+            iframe.src = '';
+        }
+    });
+
+    searchBar.addEventListener('input', (e) => {
+        const query = e.target.value.toLowerCase();
+        games.forEach(game => {
+            const gameName = game.getAttribute('data-name').toLowerCase();
+            if (gameName.includes(query)) {
+                game.style.display = 'block';
+            } else {
+                game.style.display = 'none';
+            }
+        });
+    });
+</script>
+<script>
+                function toggleFullscreen() {
+            let elem = document.querySelector('.frame');
+
+            if (!document.fullscreenElement) {
+              elem.requestFullscreen().catch((err) => {
+                alert(`Error attempting to enable fullscreen mode: ${err.message} (${err.name})`);
+              });
+            } else {
+              document.exitFullscreen();
+            }
+          }
+</script>
+</html>
